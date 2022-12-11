@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>test-1</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div class="container_one">
+
+        <div class="container_one_priority">
+        <p id="container_one_priority__text">Приоритет:</p>
+            <select id="container_one_priority__list" required="required" class="cursorPointer">
+                <option value="">Выберите значение</option>
+                <option value="1">низкий</option>
+                <option value="2">средний</option>
+                <option value="3">высокий</option> 
+            </select>
+        </div>
+
+        <div class="container_one_text">
+        <p class="container_one_text__task">Текст задачи:</p>
+            <input id="container_one_text__field" type="text" size="60px" placeholder="Введите текст" required="required" class="cursorPointer">
+        </div>
+        
+        <div class="container_one_button">
+            <button onclick="addTask(options)" class="container_one_button_click cursorPointer" id="container_one_button_click" >Добавить задачу</button>
+        </div>
+    
+    </div>
+<form oninput="filterTasks()" name="form">
+    <div class="container_two">
+        <div class="container_two_filterField">
+            <div class="container_two_filterField_priorityDate">
+                <div class="container_two_filterField_priority item">
+                    <p class="container_two_filterField_priority_text text">Фильтр по приоритету:</p>
+                    <select id="container_two_filterField_priority_field" class="field filter cursorPointer" name="filterPriority" required="required">
+                        <option class="cursorPointer" value="0">любой</option>
+                        <option value="1">низкий</option>
+                        <option value="2">средний</option>
+                        <option value="3">высокий</option>
+                    </select>
+                </div>
+                <div class="container_two_filterField_date item">
+                    <p class="container_two_filterField_date_text text">Сортировка по дате:</p>
+                    <select onchange="sortByDate()" id="container_two_filterField_date_field" class="field cursorPointer" name="sortDate" required="required">
+                        <option value="ASC">дата создания ↑</option>
+                        <option value="DESC">дата создания ↓</option>
+                    </select>
+                </div>
+            </div>
+            <div class="container_two_filterField_PriorityStatus">
+                <div class="container_two_filterField_status item" id="status">
+                    <p class="container_two_filterField_status_text text">Фильтр по статусу:</p>
+                    <div class="container_two_filterField_status_active">
+                        <label for="active">активные</label>
+                            <input type="checkbox" checked="true" id="active" class="filter filterstatus cursorPointer" name="active" value="1">
+                        </div>
+                        <div class="container_two_filterField_status_canceled">
+                            <label for="canceled">отменённые</label>
+                        <input type="checkbox" checked="true" id="canceled" class="filter filterstatus cursorPointer" name="canceled" value="3">
+                    </div>
+                    <div class="container_two_filterField_status_completed">
+                        <label for="completed">завершенные</label>
+                        <input type="checkbox" checked="true" id="completed" class="filter filterstatus cursorPointer" name="completed" value="2">
+                    </div>
+                </div>
+                <div class="container_two_filterField_sortPiority item">
+                    <p class="container_two_filterField_sortPiority_text text">Сортировка по приоритету:</p>
+                    <select onchange="sortByPriority()" id="container_two_filterField_sortPiority_field" class="field cursorPointer" name="sortPriority" required="required">
+                        <option value="ASC">приоритет ↑</option>
+                        <option value="DESC">приоритет ↓</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="container_two_search">
+            <p class="container_two_search_text">Поиск задач по тексту:</p>
+            <input id="container_two_search_field" class="field cursorPointer" type="text" name="search" size="60px" placeholder="Начните вводить текст задачи..." required="required">
+        </div>
+    </div>
+</form>
+
+    <div class="container_three">
+        <div class="container_three_output" id="container_three_output">
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="/script.js"></script>
+</html>
