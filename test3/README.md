@@ -32,4 +32,4 @@
 * PUT http://127.0.0.1:3000/items/:itemId
 
 ### Удалить элемент
-* DELETE http://127.0.0.1:3000/items/:itemId
+* DELETE http://127.0.0.1:3000/items/:itemId"# test3"  
